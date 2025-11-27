@@ -1148,10 +1148,24 @@
   </p>
 </footer>
 
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(e) {
+      const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+      if (!hCaptcha) {
+        e.preventDefault();
+        alert("Por favor, completa el captcha antes de enviar.");
+        return;
+      }
+    });
+  </script>
 
 
 </body>
 </html>
+
 
 
 
